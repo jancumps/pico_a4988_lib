@@ -32,7 +32,7 @@ public:
             mode = 0x0003;
             break;
         case 16:
-            mode = 0x0004;
+            mode = 0x0007;
             break;
         default:
             assert(false); // develop check unsupported microstep
@@ -40,7 +40,7 @@ public:
         }
         gpio_put(ms1_, mode & 0b001);
         gpio_put(ms2_, mode & 0b010);
-        gpio_put(ms1_, mode & 0b100);
+        gpio_put(ms3_, mode & 0b100);
 
         return true;
     }
